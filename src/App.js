@@ -14,7 +14,7 @@ function App() {
       >
         <ZapparCamera />
         <InstantTracker placementUI="placement-only" />
-        <HoleMask position={[0, 0, 10]} />
+        <HoleMask position={[0, 0, 1]} />
         <directionalLight position={[2.5, 8, 5]} intensity={1.5} />
       </Canvas>
     </div>
