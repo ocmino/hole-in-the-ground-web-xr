@@ -13,13 +13,8 @@ function App() {
         gl={{ preserveDrawingBuffer: true }}
       >
         <ZapparCamera />
-        <InstantTracker
-          placementUI="placement-only"
-          placementCameraOffset={[0, 0, -10]}
-        >
-          <group scale={[0.1, 0.1, 0.1]}>
-            <HoleMask />
-          </group>
+        <InstantTracker placementUI="placement-only">
+          <HoleMask />
         </InstantTracker>
         <directionalLight position={[2.5, 8, 5]} intensity={1.5} />
       </Canvas>
@@ -30,8 +25,9 @@ function App() {
 export default App;
 
 
-/* 
 
+ 
+/*
 import { Environment, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { ARButton, XR } from "@react-three/xr";
@@ -64,5 +60,5 @@ function App() {
 }
 
 export default App;
-
 */
+
