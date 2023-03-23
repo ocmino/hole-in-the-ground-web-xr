@@ -13,7 +13,7 @@ function App() {
         }}
       />
       <Canvas>
-        <Environment preset="sunset" background={true} />
+        <Environment preset="sunset" background={false} />
         <XR
           sessionInit={{
             optionalFeatures: ["dom-overlay", "local-floor", "hit-test"],
