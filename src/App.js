@@ -18,6 +18,7 @@ export default function App() {
        <HoleMask scale={[1.5, 1.5, 1.5]} />
       </InstantTracker>
       <ambientLight intensity={0.5} />
+      <spotLight position={[0, 10, 0]} angle={0.3} />
       <spotLight position={[10, 15, 10]} angle={0.3} />
       <directionalLight position={[2.5, 8, 5]} intensity={1.5} />
     </ZapparCanvas>
