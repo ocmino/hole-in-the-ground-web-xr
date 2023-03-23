@@ -13,10 +13,8 @@ function App() {
         gl={{ preserveDrawingBuffer: true }}
       >
         <ZapparCamera />
-        <InstantTracker placementUI="placement-only">
-  
-        </InstantTracker>
-        <HoleMask />
+        <InstantTracker placementUI="placement-only" />
+        <HoleMask position={[0, 0, 0]} />
         <directionalLight position={[2.5, 8, 5]} intensity={1.5} />
       </Canvas>
     </div>
@@ -24,6 +22,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
