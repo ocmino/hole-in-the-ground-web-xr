@@ -8,6 +8,7 @@ import "./App.css";
 
 export default function App() {
   return (
+    <div className="App">
     <ZapparCanvas>
       <ZapparCamera />
       <InstantTracker
@@ -16,8 +17,11 @@ export default function App() {
       >
        <HoleMask />
       </InstantTracker>
+      <ambientLight intensity={0.5} />
+      <spotLight position={[10, 15, 10]} angle={0.3} />
       <directionalLight position={[2.5, 8, 5]} intensity={1.5} />
     </ZapparCanvas>
+    </div>
   );
 }
 
