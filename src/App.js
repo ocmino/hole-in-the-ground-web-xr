@@ -1,5 +1,5 @@
 import { Canvas } from "@react-three/fiber";
-import { ZapparCamera } from "@zappar/zappar-react-three-fiber";
+import { InstantTracker, ZapparCamera } from "@zappar/zappar-react-three-fiber";
 import HoleMask from "./HoleMask";
 
 function App() {
@@ -7,6 +7,9 @@ function App() {
     <div style={{ width: "100vw", height: "100vh" }}>
       <Canvas camera={{ position: [0, 0, 0], near: 0.01, far: 1000 }}>
         <ZapparCamera rearCameraMirrorMode="css" />
+        <InstantTracker >
+          <HoleMask />
+        </InstantTracker>
         <HoleMask />
         <mesh>
           <boxBufferGeometry args={[1, 1, 1]} />
