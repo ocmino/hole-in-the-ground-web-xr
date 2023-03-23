@@ -1,5 +1,5 @@
 
-import { ZapparCamera } from "@zappar/zappar-react-three-fiber";
+/*import { ZapparCamera } from "@zappar/zappar-react-three-fiber";
 import HoleMask from "./HoleMask";
 import React from "react";
 import { InstantTracker } from "@zappar/zappar-react-three-fiber";
@@ -24,14 +24,14 @@ export default function App() {
     </ZapparCanvas>
     </div>
   );
-}
+}*/
 
-/*
+
 import { Environment, OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { ARButton, XR } from "@react-three/xr";
 import "./App.css";
-import HoleMask from "./HoleMask";
+import Pool from "./Pool";
 
 function App() {
   return (
@@ -51,7 +51,7 @@ function App() {
           <ambientLight />
           <pointLight position={[10, 10, 10]} />
           <OrbitControls />
-          <HoleMask />
+          <Pool />
         </XR>
       </Canvas>
     </div>
@@ -59,4 +59,4 @@ function App() {
 }
 
 export default App;
-*/
+
