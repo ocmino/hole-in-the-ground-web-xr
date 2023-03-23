@@ -2,7 +2,8 @@ import { Canvas } from "@react-three/fiber";
 import { ZapparCamera } from "@zappar/zappar-react-three-fiber";
 import HoleMask from "./HoleMask";
 import React from "react";
-import { InstantTracker } from "@zappar/zappar-react-three-fiber";
+import { ImageTracker } from "@zappar/zappar-react-three-fiber";
+
 
 function App() {
   return (
@@ -13,9 +14,9 @@ function App() {
         gl={{ preserveDrawingBuffer: true }}
       >
         <ZapparCamera />
-        <InstantTracker placementMode="manual">
+        <ImageTracker placementMode="manual">
           <HoleMask />
-        </InstantTracker>
+        </ImageTracker>
 
         <directionalLight position={[2.5, 8, 5]} intensity={1.5} />
       </Canvas>
