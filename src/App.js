@@ -8,6 +8,9 @@ function App() {
       <Canvas camera={{ position: [0, 0, 0], near: 0.01, far: 1000 }}>
         <ZapparCamera rearCameraMirrorMode="css" />
         <HoleMask />
+        <mesh>
+          <boxBufferGeometry args={[1, 1, 1]} />
+        </mesh>
       </Canvas>
     </div>
   );
