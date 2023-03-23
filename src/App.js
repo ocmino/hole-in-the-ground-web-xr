@@ -5,7 +5,6 @@ import React from "react";
 import { InstantTracker } from "@zappar/zappar-react-three-fiber";
 
 function App() {
-
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
       <Canvas
@@ -14,14 +13,14 @@ function App() {
         gl={{ preserveDrawingBuffer: true }}
       >
         <ZapparCamera />
-        <InstantTracker placementUI="placement-only"
-        placementCameraOffset={[0, 0, -10]}>
-        <HoleMask />
+        <InstantTracker
+          placementUI="placement-only"
+          placementCameraOffset={[0, 0, -10]}
+        >
+          <HoleMask />
         </InstantTracker>
-        <directionalLight />
-      
+        <directionalLight position={[2.5, 8, 5]} intensity={1.5} />
       </Canvas>
-     
     </div>
   );
 }
