@@ -4,7 +4,7 @@ import HoleMask from "./HoleMask";
 
 function App() {
   return (
-    <div style={{ width: "100%", height: "100%" }}>
+    <div style={{ width: "100vw", height: "100vh" }}>
       <Canvas camera={{ position: [0, 0, 0], near: 0.01, far: 1000 }}>
         <ZapparCamera rearCameraMirrorMode="css" />
         <HoleMask />
