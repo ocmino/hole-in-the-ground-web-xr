@@ -15,7 +15,7 @@ export default function App() {
         placementUI="placement-only"
         placementCameraOffset={[0, 0, -10]}
       >
-       <HoleMask />
+       <HoleMask scale={[1.5, 1.5, 1.5]} />
       </InstantTracker>
       <ambientLight intensity={0.5} />
       <spotLight position={[10, 15, 10]} angle={0.3} />
