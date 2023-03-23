@@ -10,6 +10,8 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "@types/three": "^0.149.0",
+    "@zappar/zappar-react-three-fiber": "^2.2.0",
+    "gl-matrix": "^3.4.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -39,5 +41,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.3",
+    "@babel/preset-react": "^7.18.6",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^9.1.2"
   }
 }

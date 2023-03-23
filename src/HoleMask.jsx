@@ -6,17 +6,63 @@ Command: npx gltfjsx@6.1.4 public/Models/HoleMask.gltf
 import React from "react";
 import { useGLTF } from "@react-three/drei";
 import * as THREE from "three";
-
+import { GLTFExporter } from "three/addons/exporters/GLTFExporter.js";
 const HoleMask = (props) => {
   const { nodes, materials } = useGLTF("/Models/HoleMask.gltf");
 
   const Kakel = materials["Old Tiles"];
 
+  const scene = new THREE.Scene();
+  scene.add(nodes.Cube);
+  scene.add(nodes.CubeMask);
+
+  //function to save gltf file
+  function save(blob, filename) {
+    const link = document.createElement("a");
+    document.body.appendChild(link);
+    link.style = "display: none";
+    link.href = URL.createObjectURL(blob);
+    link.download = filename;
+    link.click();
+    URL.revokeObjectURL(link.href);
+    document.body.removeChild(link);
+  }
+
+  //function to save gltf as string
+  function saveString(text, filename) {
+    save(new Blob([text], { type: "text/plain" }), filename);
+  }
+
+  //function to save gltf as arraybuffer
+  function saveArrayBuffer(buffer, filename) {
+    save(new Blob([buffer], { type: "application/octet-stream" }), filename);
+  }
+
+  //function to export jsx to gltf
+  function exportGLTF() {
+    const exporter = new GLTFExporter();
+    exporter.parse(
+      scene,
+      function (result) {
+        if (result instanceof ArrayBuffer) {
+          saveArrayBuffer(result, "scene.glb");
+        } else {
+          const output = JSON.stringify(result, null, 2);
+          console.log(output);
+          saveString(output, "scene.gltf");
+        }
+      },
+      { binary: true }
+    );
+  }
+
+  //exportGLTF();
 
   let material = new THREE.MeshBasicMaterial({
     color: 0x000000,
     colorWrite: false,
   });
+
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes.Cube.geometry}>
