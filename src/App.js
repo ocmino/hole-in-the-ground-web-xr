@@ -1,10 +1,11 @@
 
 import { ZapparCamera } from "@zappar/zappar-react-three-fiber";
-import HoleMask from "./HoleMask";
+
 import React from "react";
 import { InstantTracker } from "@zappar/zappar-react-three-fiber";
 import { ZapparCanvas } from "@zappar/zappar-react-three-fiber";
 import "./App.css";
+import Pool from "./Pool";
 
 export default function App() {
   return (
@@ -15,7 +16,7 @@ export default function App() {
         placementUI="placement-only"
         placementCameraOffset={[0, 0, -10]}
       >
-       <HoleMask scale={[1.5, 1.5, 1.5]} />
+       <Pool scale={[1.5, 1.5, 1.5]} />
       </InstantTracker>
       <ambientLight intensity={1.5} />
       <spotLight position={[0, 10, 0]} angle={0.3} />
