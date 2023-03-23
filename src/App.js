@@ -4,36 +4,22 @@ import HoleMask from "./HoleMask";
 import React from "react";
 import { InstantTracker } from "@zappar/zappar-react-three-fiber";
 import { ZapparCanvas } from "@zappar/zappar-react-three-fiber";
-import { useState } from "react";
 import "./App.css";
 
-function App() {
-
-  const [placementMode, setPlacementMode] = useState(true);
+export default function App() {
   return (
-    <div className="App">
-      <ZapparCanvas>
-        <ZapparCamera />
-        <InstantTracker placementMode={placementMode} >
-          <HoleMask />
-        </InstantTracker>
-        <directionalLight position={[2.5, 8, 5]} intensity={1.5} />
-      </ZapparCanvas>
-      <div
-        id="zappar-placement-ui"
-        onClick={() => {
-          setPlacementMode((currentPlacementMode) => !currentPlacementMode);
-        }}
+    <ZapparCanvas>
+      <ZapparCamera />
+      <InstantTracker
+        placementUI="placement-only"
+        placementCameraOffset={[0, 0, -10]}
       >
-        Tap here to
-        {placementMode ? " place " : " pick up "}
-        the object
-      </div>
-    </div>
+       <HoleMask />
+      </InstantTracker>
+      <directionalLight position={[2.5, 8, 5]} intensity={1.5} />
+    </ZapparCanvas>
   );
 }
-
-export default App;
 
 /*
 import { Environment, OrbitControls } from "@react-three/drei";
