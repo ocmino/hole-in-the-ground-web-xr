@@ -13,26 +13,23 @@ function App() {
         colorManagement={false}
         gl={{ preserveDrawingBuffer: true }}
       >
-       <ZapparCamera />
-      <InstantTracker placementMode={placementMode} >
-        <mesh>
-          <sphereBufferGeometry />
-          <meshStandardMaterial color="hotpink" />
-        </mesh>
-      </InstantTracker>
-      <directionalLight />
+        <ZapparCamera />
+        <InstantTracker placementMode={placementMode}>
         <HoleMask />
+        </InstantTracker>
+        <directionalLight />
+      
       </Canvas>
       <div
-      id="zappar-placement-ui"
-      onClick={() => {
-        setPlacementMode((currentPlacementMode) => !currentPlacementMode);
-      }}
-    >
-      Tap here to
-      {placementMode ? " place " : " pick up "}
-      the object
-    </div>
+        id="zappar-placement-ui"
+        onClick={() => {
+          setPlacementMode((currentPlacementMode) => !currentPlacementMode);
+        }}
+      >
+        Tap here to
+        {placementMode ? " place " : " pick up "}
+        the object
+      </div>
     </div>
   );
 }
