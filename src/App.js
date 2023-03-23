@@ -1,29 +1,24 @@
-import { Canvas } from "@react-three/fiber";
-import { ZapparCamera } from "@zappar/zappar-react-three-fiber";
-import HoleMask from "./HoleMask";
 import React from "react";
+
+import { ZapparCamera, ZapparCanvas } from "@zappar/zappar-react-three-fiber";
+import HoleMask from "./HoleMask";
 import { InstantTracker } from "@zappar/zappar-react-three-fiber";
 
 function App() {
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
-      <Canvas
-        camera={{ position: [0, 0, 0], near: 0.01, far: 1000 }}
-        colorManagement={false}
-        gl={{ preserveDrawingBuffer: true }}
-      >
+      <ZapparCanvas>
         <ZapparCamera />
-        <InstantTracker>
-        <HoleMask />
+        <InstantTracker placementUI="placement-only">
+          <HoleMask />
         </InstantTracker>
-     
-        <directionalLight position={[2.5, 8, 5]} intensity={1.5} />
-      </Canvas>
+      </ZapparCanvas>
     </div>
   );
 }
 
 export default App;
+
 
 
 
