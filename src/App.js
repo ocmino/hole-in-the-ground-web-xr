@@ -1,11 +1,11 @@
 import { Canvas } from "@react-three/fiber";
 import { ZapparCamera } from "@zappar/zappar-react-three-fiber";
 import HoleMask from "./HoleMask";
-import React, { useState } from "react";
+import React from "react";
 import { InstantTracker } from "@zappar/zappar-react-three-fiber";
 
 function App() {
-  const [placementMode, setPlacementMode] = useState(true);
+
   return (
     <div style={{ width: "100vw", height: "100vh" }}>
       <Canvas
@@ -14,22 +14,14 @@ function App() {
         gl={{ preserveDrawingBuffer: true }}
       >
         <ZapparCamera />
-        <InstantTracker placementMode={placementMode}>
+        <InstantTracker placementUI="placement-only"
+        placementCameraOffset={[0, 0, -10]}>
         <HoleMask />
         </InstantTracker>
         <directionalLight />
       
       </Canvas>
-      <div
-        id="zappar-placement-ui"
-        onClick={() => {
-          setPlacementMode((currentPlacementMode) => !currentPlacementMode);
-        }}
-      >
-        Tap here to
-        {placementMode ? " place " : " pick up "}
-        the object
-      </div>
+     
     </div>
   );
 }
